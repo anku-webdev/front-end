@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: gray;
+        }
+
+        form {
+            height: 50vh;
+            width: 50vw;
+            /* border: 1px solid black; */
+            display: flex;
+            flex-direction: column;
+            margin: 10vw auto;
+            box-shadow: 0 0 20px black;
+
+        }
+
+        h2 {
+            color: blue;
+            text-align: center;
+            margin: 0.2rem;
+        }
+
+        input {
+            height: 40px;
+            width: 80%;
+            margin-left: 4rem;
+            margin-top: 0.5rem;
+        }
+
+        input:focus {
+            border-color: #28a745;
+            border: none;
+            box-shadow: 0 0 10px rgba(40, 167, 69, 0.4);
+            background-color: #eaffea;
+
+        }
+
+        button {
+            height: 40px;
+            width: 80%;
+            margin-left: 4rem;
+            margin-top: 1rem;
+            background-color: blue;
+            color: white;
+            border: none;
+        }
+
+        button:hover {
+            background-color: rgba(0, 0, 255, 0.673);
+            color: white;
+            border: none;
+        }
+
+        .showHide {
+            cursor: pointer;
+            /* background-color: blue; */
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            position: absolute;
+            left: 57rem;
+            top: 22.45rem;
+        }
+
+        .showHide i {
+            margin-left: px;
+            margin-top: 8px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form action="#" class="container h-auto w-50">
+        <h2>FORM VALIDATION</h2>
+        <label for="fullName"><input type="text" placeholder="FULL NAME" id="fullName" required></label>
+        <label for="email"><input type="email" placeholder="EMAIL" id="email" required></label>
+        <label for="phoneNumber"><input type="number" placeholder="PHONE NUMBER" id="phoneNumber"></label>
+        <label for="password"><input type="password" placeholder="PASSWORD" name="password" id="input-password"
+                required></label>
+        <a class="showHide"><i class="fa-solid fa-eye "></i></a>
+        <button class=" mb-2" id="submitBtn">SUBMIT</button>
+    </form>
+    <div>
+
+    </div>
+    <!-- <script>
+
+        let fullname = document.querySelector('#fullName');
+        let phoneNumber = document.querySelector('#phoneNumber');
+        let email = document.querySelector('#email');
+        let password = document.querySelector('#input-password');
+        let inputPassword = document.getElementById('input-password');
+        // store form data in userdata object
+        let userdata = {
+            username: fullname.value,
+            userNumber: phoneNumber.value,
+            userEmail: email.value,
+            userPass: inputPassword.value
+        }
+        // hide button 
+        let hideShowBtn = document.querySelector('.showHide');
+        hideShowBtn.addEventListener('click', () => {
+            // let inputPassword = document.getElementById('input-password');
+            inputPassword.type = inputPassword.type === "password" ? "text" : "password";
+
+        })
+        // submit button
+        let submitBtn = document.querySelector('#submitBtn');
+        submitBtn.addEventListener('click', () => {
+            event.preventDefault();
+            // store fome data 
+            localStorage.setItem("formData", JSON.stringify(userdata));
+            // access the form data
+            let accessFormdata = JSON.parse(localStorage.getItem('formData'))
+            // print data 
+            console.log(accessFormdata.fullname);
+            console.log(accessFormdata.email);
+            console.log(accessFormdata.phoneNumber);
+            console.log(accessFormdata.password);
+        });
+
+    </script> -->
+   <script>
+    let fullname = document.querySelector('#fullName');
+let phoneNumber = document.querySelector('#phoneNumber');
+let email = document.querySelector('#email');
+let inputPassword = document.querySelector('#input-password');
+
+// Toggle Password Visibility
+let hideShowBtn = document.querySelector('.showHide');
+hideShowBtn.addEventListener('click', () => {
+    inputPassword.type = inputPassword.type === "password" ? "text" : "password";
+});
+
+// Submit Button
+let submitBtn = document.querySelector('#submitBtn');
+submitBtn.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent page reload
+
+    // Check if any field is empty
+    if (
+        fullname.value.trim() === "" ||
+        email.value.trim() === "" ||
+        phoneNumber.value.trim() === "" ||
+        inputPassword.value.trim() === ""
+    ) {
+        alert("Please fill in all the fields!");
+        return; // Stop the function here
+    }
+
+    // Create data object with input values
+    let userdata = {
+        fullname: fullname.value,
+        email: email.value,
+        phoneNumber: phoneNumber.value,
+        password: inputPassword.value
+    };
+
+    // Store data in localStorage
+    localStorage.setItem("formData", JSON.stringify(userdata));
+
+    // Retrieve and log data
+    let accessFormdata = JSON.parse(localStorage.getItem('formData'));
+    console.log(accessFormdata.fullname);
+    console.log(accessFormdata.email);
+    console.log(accessFormdata.phoneNumber);
+    console.log(accessFormdata.password);
+});
+
+    event.preventDefault(); // Prevent page reload
+
+    // Create data object with input values
+    let userdata = {
+        fullname: fullname.value,
+        email: email.value,
+        phoneNumber: phoneNumber.value,
+        password: inputPassword.value
+    };
+
+    // Store data in localStorage
+    localStorage.setItem("formData", JSON.stringify(userdata));
+
+    // Retrieve and log data
+    let accessFormdata = JSON.parse(localStorage.getItem('formData'));
+    console.log(accessFormdata.fullname);
+    console.log(accessFormdata.email);
+    console.log(accessFormdata.phoneNumber);
+    console.log(accessFormdata.password);
+
+   </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+</html>

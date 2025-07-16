@@ -98,45 +98,7 @@
         <button class=" mb-2" id="submitBtn">SUBMIT</button>
     </form>
     <div>
-
     </div>
-    <!-- <script>
-
-        let fullname = document.querySelector('#fullName');
-        let phoneNumber = document.querySelector('#phoneNumber');
-        let email = document.querySelector('#email');
-        let password = document.querySelector('#input-password');
-        let inputPassword = document.getElementById('input-password');
-        // store form data in userdata object
-        let userdata = {
-            username: fullname.value,
-            userNumber: phoneNumber.value,
-            userEmail: email.value,
-            userPass: inputPassword.value
-        }
-        // hide button 
-        let hideShowBtn = document.querySelector('.showHide');
-        hideShowBtn.addEventListener('click', () => {
-            // let inputPassword = document.getElementById('input-password');
-            inputPassword.type = inputPassword.type === "password" ? "text" : "password";
-
-        })
-        // submit button
-        let submitBtn = document.querySelector('#submitBtn');
-        submitBtn.addEventListener('click', () => {
-            event.preventDefault();
-            // store fome data 
-            localStorage.setItem("formData", JSON.stringify(userdata));
-            // access the form data
-            let accessFormdata = JSON.parse(localStorage.getItem('formData'))
-            // print data 
-            console.log(accessFormdata.fullname);
-            console.log(accessFormdata.email);
-            console.log(accessFormdata.phoneNumber);
-            console.log(accessFormdata.password);
-        });
-
-    </script> -->
    <script>
     let fullname = document.querySelector('#fullName');
 let phoneNumber = document.querySelector('#phoneNumber');

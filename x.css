@@ -1,0 +1,408 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+  min-height: 100vh;
+}
+
+/* Layout Structure */
+.d-flex.h-100.w-100.row {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Sidebars */
+#left, #right {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  align-self: flex-start;
+}
+
+#left {
+  width: 18rem;
+  z-index: 1020;
+}
+
+/* Center Content */
+#center {
+  border: 1px solid rgba(255, 255, 255, 0.336);
+  overflow-y: visible;
+  height: auto;
+}
+
+/* Header */
+#main-header, .boxs {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  font-size: 0.9rem;
+  justify-content: space-around;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.755);
+  border-bottom: 1px solid #6c757d;
+}
+
+#main-header .boxs p {
+  width: min-content;
+  height: 100%;
+  padding: 1rem 0 0.8rem;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  text-align: center;
+}
+
+#main-header .boxs p:active, .active-tab {
+  border-bottom: 2px solid #1d9bf0 !important;
+}
+
+#main-header .boxs:hover {
+  background-color: rgba(255, 255, 255, 0.506);
+  transition: 2ms;
+  cursor: pointer;
+}
+
+/* Main Content */
+#main-content {
+  scrollbar-width: none;
+  height: auto;
+}
+
+#main-content .post {
+  height: auto;
+  width: 100%;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.291);
+}
+#my-user-profile{
+  /* background: red; */
+  display: inline-flex;
+  position: relative;
+  top: 1.2rem;
+  left: 1.75rem;
+}
+
+/* Post textarea */
+#main-content .post div textarea {
+  position: relative;
+  border: 2px solid white;
+  left: 4.2rem;
+  bottom: 2rem;
+  height: 5rem;
+  width: 80%;
+  resize: none;
+
+  text-wrap: wrap;
+  overflow:scroll;
+  scrollbar-width: none;
+  border: none;
+  background-color: transparent !important;
+  color: white !important;
+}
+
+#main-content .post div textarea::placeholder {
+  font-size: 1.2rem;
+}
+
+#main-content .post div textarea:focus {
+  outline: none;
+  font-size: 1.2rem;
+}
+
+/* Post Icons */
+#main-content .post .additional-icons {
+  display: flex;
+  justify-content: space-around;
+  width: 14rem;
+  margin-left: 2rem;
+}
+
+#main-content .post .additional-icons i {
+  color: lightblue;
+  width: 0.1rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* Post Button */
+#main-content .post div button {
+  position: relative;
+  bottom: 2rem;
+  left: 80%;
+  color: black;
+  font-weight: bold;
+  border-radius: 20rem;
+}
+
+/* User Profile */
+.user-profile, #user-profile-container .user-profile {
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: blue;
+}
+
+#user-profile-container {
+  height: 3rem;
+}
+
+#user-profile-container .user-profile {
+  height: 35px;
+  width: 35px;
+  position: relative;
+  top: 0.7rem;
+  left: 0.8rem;
+  padding-bottom: 0.2rem;
+}
+
+#user-profile-container h6 {
+  margin-left: 1rem;
+}
+
+/* Posts */
+.post1 {
+  height: 33rem;
+  width: 100%;
+}
+
+.post1:hover, .post1:focus {
+  background-color: rgba(128, 128, 128, 0.08);
+}
+
+.post-caption-container {
+  margin-left: 3rem;
+  display: inline-block;
+  position: relative;
+  top: -10px;
+  font-weight: 300;
+  height: 3rem;
+}
+
+.post-photos-container {
+  height: 15rem;
+  position: relative;
+  top: -20px;
+}
+
+.post1 .post-photos-container .photo {
+  height: 22rem;
+  width: auto;
+  margin-left: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.213);
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.photo marquee {
+  padding-top: 25%;
+  font-size: 3rem;
+   height: 22rem;
+  width: 100%;
+  border-radius: 25px;
+  color: rebeccapurple;
+  border: 3px solid rebeccapurple;
+  text-transform: uppercase;
+  animation-name: colorMarquee;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes colorMarquee {
+  0%{
+    color: red;
+    transform: scale(0.0005);
+  }
+  10%{
+    color: blue;
+  }
+  20%{
+    color: paleturquoise;
+  }
+  30%{
+    color: violet;
+  }
+  40%{
+    color: aqua;
+  }
+  50%{
+    color: khaki;
+  }
+  60%{
+    color: lightsalmon;
+  }
+  70%{
+    color: orange;
+  }
+  80%{
+    color: yellow;
+  }
+  90%{
+    color: white;
+  }
+  100%{
+    color: green;
+  }
+}
+
+/* User Info */
+.name {
+  font-size: 15px;
+}
+
+.username, #hours {
+  font-size: 14px;
+  font-weight: 100;
+}
+
+#hours {
+  margin-left: 2rem;
+}
+
+/* Post Reactions */
+.post-react {
+  width: 30rem;
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.post-react i {
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.post-react i:hover {
+  color: blue;
+}
+
+.post-react div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.post-react p {
+  padding: 1rem 0 0 0.5rem;
+}
+
+/* Logo */
+#logo-container {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+#logo-container:hover {
+  background-color: rgba(128, 128, 128, 0.164);
+  border-radius: 50%;
+}
+
+/* Sidebar Items */
+.slidebar-items {
+  transition: background-color 0.2s ease;
+}
+
+.slidebar-items:hover {
+  background-color: rgba(80, 84, 85, 0.613);
+}
+
+/* Trending Items */
+[id^="sgst-"] {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+[id^="sgst-"]:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  #center {
+    border-right: none;
+  }
+  
+  #left, #right {
+    position: static;
+    height: auto;
+  }
+  
+  #main-content {
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  #main-content .post div button {
+    left: 70%;
+  }
+  
+  .post1 .post-photos-container .photo {
+    width: 90%;
+    margin-left: 1rem;
+  }
+  
+  .post-react {
+    width: 90%;
+  }
+}
+/* Add this to your existing CSS */
+
+/* Image Styling */
+#profile-img, .user-profile img {
+  object-fit: cover;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: block; /* Removes extra space below images */
+}
+
+/* Logo Image */
+#logo-container img {
+  height: 1.4rem;
+  width: 1.4rem;
+  margin: 0.2rem;
+  display: block;
+}
+
+/* Post Images */
+.post-photos-container img, #user-photos {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+/* Background Image */
+#user-photos {
+  height: 20rem;
+  width: 95%;
+  margin: 1rem;
+  box-shadow: 0 0 2px teal;
+  background-image: url(SIDE\ POSE-Photoroom.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Responsive Images */
+@media (max-width: 768px) {
+  .post-photos-container img, #user-photos {
+    width: 95%;
+    margin: 0.5rem auto;
+  }
+}

@@ -1,1 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tourist Management</title>
 
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- custom css -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="first-nav container-fluid bg-primary d-flex justify-content-around text-center text-white py-2">
+      <h6 class="my-1">Admin login</h6>
+      <span class="d-sm-flex justify-content-evenly w-50 mx-5">
+        <h6 class="my-1">Toll Number: 123-4585856</h6>
+        <span class="d-flex justify-content-between">
+          <a href="#" class="text-white text-decoration-none mx-2" type="button" data-bs-toggle="modal"
+            data-bs-target="#signUpModal">Sign Up</a>
+          /
+          <a href="#" class="text-white text-decoration-none mx-2">Sign In</a>
+        </span>
+      </span>
+    </nav>
+    <!-- sign up  modal -->
+    <div class="modal fade" id="signUpModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- modal header -->
+          <div class="modal-header d-flex justify-content-between">
+            <h5 class="text-dark fw-bold text-cente modal-title">SIGN UP</h5>
+            <button class="btn-close-btn-close-white" type="button" data-bs-dismiss="modal">
+              <i class="fas fa-close"></i>
+            </button>
+          </div>
+
+          <!-- modal body -->
+          <div class="modal-body">
+            <form id="signUpForm">
+              <!-- full name -->
+              <div class="mb-3">
+                <label>Full Name</label>
+                <input type="text" class="form-control" id="fullName" required />
+              </div>
+
+              <!-- Mobile Number -->
+              <div class="mb-3">
+                <label>Mobile Number</label>
+                <input type="number" class="form-control" id="mobileNo" required />
+              </div>
+              <!-- Email -->
+              <div class="mb-3">
+                <label>Email</label>
+                <input type="email" class="form-control" id="emailId" required />
+
+                <!-- Password -->
+                <div class="mb-3">
+                  <label for="signUpPassword" class="form-label" id="passWord">Password</label>
+                  <div class="position-relative">
+                    <input type="password" class="form-control" id="signUpPassword" required
+                      autocomplete="new-password" />
+
+                    <i class="fas fa-eye position-absolute" id="showIcon" style="
+                          top: 50%;
+                          right: 15px;
+                          transform: translateY(-50%);
+                          cursor: pointer;
+                        "></i>
+                  </div>
+                </div>
+                <!-- button SIGN UP -->
+                <button class="btn btn-success" type="button" id="signUpBtn" disabled>Sign Up</button>
+                <div id="signupSuccessMsg" class="alert alert-success d-none" role="alert">
+                  ✅ You have signed up successfully! You can now log in.
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="second-nav container-fluid bg-light py-2 d-flex justify-content-between">
+      <h3 class="text-primary m-0">
+        TOURIST <span class="text-success">MANAGEMENT SYSTEM</span>
+      </h3>
+      <a href="#" class="text-decoration-none mx-3 d-none d-sm-block"><i class="fas fa-lock"></i> SAFE & SECURE</a>
+    </nav>
+
+    <!-- Navigation Links -->
+    <nav class="third-nav container-fluid bg-success">
+      <ul class="list-unstyled d-flex justify-content-between align-items-center w-75 mx-auto m-0 py-2">
+        <li><a href="#" class="text-white text-decoration-none">Home</a></li>
+        <li><a href="#" class="text-white text-decoration-none">About</a></li>
+        <li>
+          <a href="#tourPackages" class="text-white text-decoration-none">Tour Packages</a>
+        </li>
+        <li>
+          <a href="#" class="text-white text-decoration-none">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="#" class="text-white text-decoration-none">Terms of Use</a>
+        </li>
+        <li>
+          <a href="#" class="text-white text-decoration-none">Contact Us</a>
+        </li>
+        <li>
+          <a href="#" class="text-white text-decoration-none">Enquiry</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Carousel Section -->
+  <section>
+    <div id="carousel-slide" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="manali-img.jpg" class="d-block w-100" alt="Manali" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>🏔️ Manali -A Paradise in the Himalayas</h5>
+            <p>
+              "Manali: Snowy peaks, scenic valleys & unforgettable
+              adventures!"
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="vanvasa-img.jpg" class="d-block w-100" alt="Vanvasa" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>🌿 Vanvasa Resort – Wilderness with Luxury</h5>
+            <p>"Experience nature in its purest form at Vanvasa Resort."</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="auli-img.jpg" class="d-block w-100" alt="Auli" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>🏔️ Auli - The Snowy Paradise of Uttarakhand</h5>
+            <p>"Feel the chill, love the thrill - Auli awaits."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Optional Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carousel-slide" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carousel-slide" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section>
+
+  <section class="packages-details container text-capitalize my-5" id="tourPackages">
+    <h2 class="container">Package list</h2>
+    <!-- 1st -->
+    <div class="container d-flex justify-content-between border text-capitalize text-light my-3">
+      <div class="img-box">
+        <img src="darjeeling-img.jpg" alt="darjeeling" class="photos" />
+      </div>
+      <div class="content-box mx-2 my-1 w-75">
+        <h3 class="content-heading text-success">
+          Package Name : Darjeeling & Gangkok Holiday (without flights)
+        </h3>
+        <h6 class="text-dark">Package type : family package</h6>
+        <p class="text-body my-2">package location : sikkim</p>
+        <p class="text-body">
+          features : free wifi, free pickup and drop facility
+        </p>
+      </div>
+      <div class="price-box d-flex flex-column justify-content-center">
+        <h4 class="text-dark">$252 USD</h4>
+        <button class="btn btn-success">Details</button>
+      </div>
+    </div>
+    <!-- 2nd -->
+    <div class="container d-flex justify-content-between border text-capitalize text-light my-3">
+      <div class="img-box">
+        <img src="manali-img.jpg" alt="" class="photos" />
+      </div>
+      <div class="content-box mx-2 my-1 w-75">
+        <h3 class="content-heading text-success">
+          Package Name : manali & Dalhousie Holiday (without flights)
+        </h3>
+        <h6 class="text-dark">Package type : family package</h6>
+        <p class="text-body my-2">package location : himachal pardesh</p>
+        <p class="text-body">
+          features : free wifi, free pickup and drop facility
+        </p>
+      </div>
+      <div class="price-box d-flex flex-column justify-content-center">
+        <h4 class="text-dark">$202 USD</h4>
+        <button class="btn btn-success">Details</button>
+      </div>
+    </div>
+    <!-- 3rd -->
+    <div class="container d-flex justify-content-between border text-capitalize text-light my-3">
+      <div class="img-box">
+        <img src="shimla-img.jpg" alt="" class="photos" />
+      </div>
+      <div class="content-box mx-2 my-1 w-75">
+        <h3 class="content-heading text-success">
+          Package Name : shimla & Dharamshala Holiday (without flights)
+        </h3>
+        <h6 class="text-dark">Package type : family package</h6>
+        <p class="text-body my-2">package location : himachal pardesh</p>
+        <p class="text-body">
+          features : free wifi, free pickup and drop facility
+        </p>
+      </div>
+      <div class="price-box d-flex flex-column justify-content-center">
+        <h4 class="text-dark">$252 USD</h4>
+        <button class="btn btn-success">Details</button>
+      </div>
+    </div>
+    <!--  4th -->
+    <div class="container d-flex justify-content-between border text-capitalize text-light my-3">
+      <div class="img-box">
+        <img src="auli-img.jpg" alt="" class="photos" />
+      </div>
+      <div class="content-box mx-2 my-1 w-75">
+        <h3 class="content-heading text-success">
+          Package Name : auli & chamba Holiday (without flights)
+        </h3>
+        <h6 class="text-dark">Package type : family package</h6>
+        <p class="text-body my-2">package location : uttrakhand</p>
+        <p class="text-body">
+          features : free wifi, free pickup and drop facility
+        </p>
+      </div>
+      <div class="price-box d-flex flex-column justify-content-center">
+        <h4 class="text-dark">$722 USD</h4>
+        <button class="btn btn-success">Details</button>
+      </div>
+    </div>
+    <!-- 5th -->
+    <div class="container d-flex justify-content-between border text-capitalize text-light my-3">
+      <div class="img-box">
+        <img src="vanvasa-img.jpg" alt="" class="photos" />
+      </div>
+      <div class="content-box mx-2 my-1 w-75">
+        <h3 class="content-heading text-success">
+          Package Name : vanvasa resort Holiday (without flights)
+        </h3>
+        <h6 class="text-dark">Package type : family package</h6>
+        <p class="text-body my-2">package location : uttrakhand</p>
+        <p class="text-body">
+          features : free wifi, free pickup and drop facility
+        </p>
+      </div>
+      <div class="price-box d-flex flex-column justify-content-center">
+        <h4 class="text-dark">$585 USD</h4>
+        <button class="btn btn-success">Details</button>
+      </div>
+    </div>
+    <button class="btn btn-success text-capitalize mx-5 mb-3">
+      view more packages
+    </button>
+  </section>
+  <section id="Testimonials" class="container-fluid d-flex justify-content-around">
+    <div class="testimonials-boxs d-flex">
+      <i class="fas fa-user fs-1 text-success my-3"></i>
+      <div class="numbers-test d-flex flex-column">
+        <h4 id="Users"></h4>
+        <h6 class="text-secondary">Registor Users</h6>
+      </div>
+    </div>
+    <div class="testimonials-boxs d-flex">
+      <i class="fas fa-user fs-1 text-success my-3"></i>
+      <div class="numbers-test d-flex flex-column">
+        <h4 id="Enquries"></h4>
+        <h6 class="text-secondary">Enquiries</h6>
+      </div>
+    </div>
+    <div class="testimonials-boxs d-flex">
+      <i class="fas fa-user fs-1 text-success my-3"></i>
+      <div class="numbers-test d-flex flex-column">
+        <h4 id="Booking" class="mp-5"></h4>
+        <h6 class="text-secondary">Bookings</h6>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-success d-flex flex-column">
+    <div class="social-media">
+      <a href="www.x.com/in/mayankrawat"><i class="fab fa-twitter fs-3"></i></a>
+      <a href="https://www.instagram.com/mayankrawat2308/"><i class="fab fa-instagram fs-3"></i></a>
+      <a href="https://www.linkedin.com/in/mayank-rawat2308/"><i class="fab fa-linkedin fs-3"></i></a>
+      <a href="https://github.com/anku-webdev"><i class="fab fa-github fs-3"></i></a>
+    </div>
+    <div class="copy-right">
+      &copy; 2025 Tourist Management System. All rights reserved.
+    </div>
+  </footer>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- script file -->
+  <script src="script.js"></script>
+</body>
+</html>

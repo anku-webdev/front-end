@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    background: #00000099;
+}
+
+.photos {
+    width: 150px;
+    height: 150px;
+}
+
+#tourPackages {
+    background: rgba(128, 128, 128, 0.724);
+    box-shadow: 0 0 20px black;
+    height: 100%;
+}
+
+.carousel-inner img {
+    height: 500px;
+    object-fit: cover;
+    /* filter: blur(2px); OPTIONAL: Remove if not needed */
+}
+
+footer {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-media a i:hover {
+    color: rgb(46, 46, 152);
+    transform: scaleY(2);
+    transform: translateY(-10px);
+}
+
+.social-media i {
+    box-shadow: 0 0 10px white;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    padding-top: 4px;
+    padding-left: 4.5px;
+}
+
+/* signupSuccessMsg button sign up complete msg */
+#signupSuccessMsg{
+    position: absolute;
+    top: 0;
+    left: 100;
+}
